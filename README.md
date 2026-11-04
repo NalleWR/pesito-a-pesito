@@ -24,3 +24,11 @@ Upload all files in this folder to the ROOT of the `main` branch of your existin
 
 ## Security
 The GitHub Pages website is public; data is stored only in the user's browser localStorage. This is not a secure vault and no end-to-end encryption is provided. Never put passwords or personal financial records into the repository.
+
+
+## v1.2 Rosita Elegante update
+- Two bottom navigation destinations: Mi Cartera and Settings.
+- Smart Search is available inside Settings.
+- Added antique-gold floral accents to dashboard.
+- Full installation name set in manifest; Android may still truncate its label.
+- Preserves existing local data key and transaction behavior.
