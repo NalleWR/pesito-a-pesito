@@ -32,3 +32,14 @@ The GitHub Pages website is public; data is stored only in the user's browser lo
 - Added antique-gold floral accents to dashboard.
 - Full installation name set in manifest; Android may still truncate its label.
 - Preserves existing local data key and transaction behavior.
+
+
+## v1.2.1 deployment repair
+- Two bottom tabs: Mi Cartera and Settings. Search is inside Settings.
+- Antique-gold floral accents and full PWA installation name.
+- Added `.nojekyll` for branch-based GitHub Pages publishing.
+- Updated JS/CSS cache-busting query to 121 and service worker to v121.
+- Service worker installation tolerates a temporarily unavailable asset.
+- This package cannot resolve a GitHub Actions queue outage or a stuck Pages deployment.
+- Upload the files into the repository root on main, not a subfolder.
+- Do not clear browser storage: financial records live in localStorage.
