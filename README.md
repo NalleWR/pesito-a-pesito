@@ -1,20 +1,13 @@
-# Pesito a Pesito — v0.1 starter
+# Pesito a Pesito v0.2 🐷
 
-A personal, offline-capable expense tracker prototype. This is **not** a production-ready financial vault.
+A personal, browser-local budgeting prototype with a proper installable PWA shell.
 
-## Included
-- Mi Cartera dashboard, account groups, local accounts, expenses and income
-- Fictional sample data (no real user financial information)
-- Local browser storage, JSON export and restore
-- Basic offline cache after first successful load
+## Install on Samsung
+Upload the **contents** of this folder to the root of the existing GitHub repository (replace matching files). Wait for GitHub Pages deployment, refresh the website, then remove the old home-screen shortcut / installed entry and install the refreshed app from Chrome. If the old app remains installed, uninstall that entry first.
 
-## Not yet included
-- The approved mascot artwork and icon (replace when assets are available)
-- Transfers, refunds, Compra Rápida, Smart Search, editable transactions, encryption, biometric lock
-- Robust backup validation and migration, account editing, signed builds
-
-## Run locally
-Serve the folder over localhost (for example, `python -m http.server 8000`) and open `http://localhost:8000`. Service workers require localhost or HTTPS.
-
-## Security
-Never commit real financial data or exported backups to GitHub. This app uses `localStorage`, which is not encrypted. A publicly hosted site is accessible by anyone who knows the URL, even if the source repository is private. Don't enter sensitive financial records until deployment and storage protections are reviewed. Export backups regularly and protect exported files.
+## Important
+- This release uses the **same** `pesito-a-pesito-v01` localStorage key as v0.1, so existing browser records are not deliberately reset.
+- Export a backup before installing or uninstalling. Browser/installed PWA storage can be affected by uninstalling, clearing data, or changing browser contexts.
+- Data is **not encrypted**. Do not enter sensitive financial information until storage, backup, and security have been tested.
+- The GitHub Pages website and public repository are publicly accessible. No bank credentials or private information belong in this repo.
+- v0.2 adds branding, app icons, standalone manifest, offline shell, and a simple account ledger. More advanced approved features are not implemented yet.
