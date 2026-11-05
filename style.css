@@ -638,34 +638,9 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .stats .stat-text strong{font-family:Georgia,'Times New Roman',serif!important;font-weight:700!important;color:#920b3e!important;font-size:clamp(15px,4.2vw,24px)!important;line-height:1.1!important;letter-spacing:-.55px!important;white-space:nowrap!important}
 .stats .stat-chevron{display:none!important}
 
-/* v2.9.4: exact user-approved combined artwork, cropped to two responsive panels.
-   Only the number area is covered by a live balance overlay. */
-.stats .card.approved-stat{position:relative!important;display:block!important;aspect-ratio:2.43 / 1!important;height:auto!important;min-height:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important;background-image:url('./a_clean_elegant_matching_palette_ui_banner_with.png')!important;background-repeat:no-repeat!important;background-size:210% auto!important;background-color:transparent!important;pointer-events:none!important}
+/* v3.0: approved blank card artwork, no masks, borders, or duplicate text. */
+.stats{gap:7px!important}
+.stats .card.approved-stat{position:relative!important;display:block!important;aspect-ratio:2.45 / 1!important;height:auto!important;min-height:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important;background-color:transparent!important;background-image:url('./file_000000001304820cbacbd52acd66aea9.png')!important;background-repeat:no-repeat!important;background-size:205% auto!important;pointer-events:none!important}
 .stats .debt-stat.approved-stat{background-position:left center!important}
 .stats .savings-stat.approved-stat{background-position:right center!important}
-.stats .approved-stat-amount{position:absolute!important;left:40.5%!important;top:58%!important;width:55%!important;height:23%!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff3f4!important;color:#90092e!important;font:700 clamp(13px,3.25vw,26px)/1 Georgia,'Times New Roman',serif!important;letter-spacing:-.045em!important;white-space:nowrap!important;z-index:2!important}
-.stats .approved-stat::after{display:none!important}
-
-.stats .approved-stat-amount{top:51%!important;height:31%!important}
-
-/* v2.9.5: repair summary artwork seam and cover the complete printed amounts. */
-.stats{gap:5px!important}
-.stats .card.approved-stat{aspect-ratio:2.44 / 1!important;background-size:209% auto!important;background-color:transparent!important}
-.stats .debt-stat.approved-stat{background-position:0% 50%!important}
-.stats .savings-stat.approved-stat{background-position:100% 50%!important}
-.stats .approved-stat-amount{left:36%!important;top:49%!important;width:62%!important;height:37%!important;background:#fff3f4!important;font-size:clamp(13px,3.3vw,24px)!important;letter-spacing:-.04em!important}
-
-/* v2.9.6: finish the two clipped right-hand card edges without moving the art. */
-.stats .card.approved-stat{border:2px solid #f3a6bc!important;border-radius:22px!important;box-sizing:border-box!important;overflow:hidden!important;background-clip:padding-box!important;box-shadow:0 4px 8px #b85c7d1a!important}
-.stats .approved-stat-amount{background:#fff3f4!important}
-
-/* v2.9.7: remove the duplicate outlines and use the original artwork borders only. */
-.stats .card.approved-stat{border:0!important;border-radius:0!important;box-shadow:none!important;background-clip:border-box!important;overflow:hidden!important}
-.stats .approved-stat-amount{background:#fff3f4!important;border-radius:0!important}
-
-/* Source image is 1536×512: each card occupies x≈24–755 / 778–1510,
-   y≈110–410. Align those actual borders within each viewport. */
-.stats .card.approved-stat{background-size:210% auto!important}
-.stats .debt-stat.approved-stat{background-position:3% center!important}
-.stats .savings-stat.approved-stat{background-position:97% center!important}
-.stats .approved-stat-amount{left:39%!important;top:52%!important;width:57%!important;height:28%!important;background:#fff2f3!important;font-size:clamp(13px,3.3vw,24px)!important}
+.stats .approved-stat-amount{position:absolute!important;left:40%!important;top:58%!important;width:57%!important;height:24%!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#90092e!important;font:700 clamp(13px,3.5vw,25px)/1 Georgia,'Times New Roman',serif!important;letter-spacing:-.04em!important;white-space:nowrap!important;z-index:2!important}
