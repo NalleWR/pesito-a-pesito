@@ -659,3 +659,9 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 
 /* v3.0.7: scale down the centered net-worth floral flourish only. */
 .overviewmore::after,.overviewmore:not([open])::after,.overviewmore[open]::after{width:clamp(85px,28vw,140px)!important;height:24px!important;background-size:contain!important}
+
+/* v3.0.8: approved minimalist available-money card; live amount only. */
+.overview .card.hero{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;height:clamp(94px,25vw,116px)!important;min-height:0!important;padding:0 9%!important;border:0!important;border-radius:20px!important;box-shadow:none!important;overflow:hidden!important;background-color:#fff0f3!important;background-image:url('./file_000000003a1c81f9abfe0a827a244401.png')!important;background-repeat:no-repeat!important;background-size:100% 190%!important;background-position:center 30%!important}
+.overview .hero .hero-amount{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;grid-column:auto!important;grid-row:auto!important;transform:translateY(16%)!important;width:100%!important;max-width:100%!important;text-align:center!important;min-width:0!important}
+.overview .hero .hero-amount .big{margin:0!important;color:#9d003a!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:800!important;font-size:clamp(25px,7.2vw,42px)!important;line-height:1.05!important;letter-spacing:-.035em!important;white-space:nowrap!important;font-variant-numeric:tabular-nums!important}
+@media(max-width:390px){.overview .hero .hero-amount .big{font-size:clamp(22px,6.7vw,29px)!important}}
