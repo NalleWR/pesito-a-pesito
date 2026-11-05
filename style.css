@@ -647,3 +647,10 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .stats .approved-stat::after{display:none!important}
 
 .stats .approved-stat-amount{top:51%!important;height:31%!important}
+
+/* v2.9.5: repair summary artwork seam and cover the complete printed amounts. */
+.stats{gap:5px!important}
+.stats .card.approved-stat{aspect-ratio:2.44 / 1!important;background-size:209% auto!important;background-color:transparent!important}
+.stats .debt-stat.approved-stat{background-position:0% 50%!important}
+.stats .savings-stat.approved-stat{background-position:100% 50%!important}
+.stats .approved-stat-amount{left:36%!important;top:49%!important;width:62%!important;height:37%!important;background:#fff3f4!important;font-size:clamp(13px,3.3vw,24px)!important;letter-spacing:-.04em!important}
