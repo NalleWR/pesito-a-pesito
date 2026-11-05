@@ -650,3 +650,6 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 
 /* v3.0.2: newest approved number-free artwork with centered Total Debt heading. */
 .stats .card.approved-stat{background-image:url('./file_0000000010a4822fbe83a01df868719a.png')!important}
+
+/* v3.0.3: gently round card clipping only; no additional border or resizing. */
+.stats .card.approved-stat{border-radius:22px!important;overflow:hidden!important}
