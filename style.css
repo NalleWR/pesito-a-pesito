@@ -613,3 +613,9 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 @media(max-width:380px){
  .sectiontitle.floral-heading .accounts-art-title{width:min(185px,55vw)!important;height:31px!important}
 }
+
+/* v2.8.9: one integrated heart and lettering graphic, no CSS pink overlays. */
+.sectiontitle.floral-heading .accounts-art-title{width:min(390px,78vw)!important;height:auto!important;min-height:0!important;display:block!important;position:relative!important;background:none!important;overflow:visible!important}
+.sectiontitle.floral-heading .accounts-art-title::before,.sectiontitle.floral-heading .accounts-art-title::after{content:none!important;display:none!important;background:none!important}
+.sectiontitle.floral-heading .accounts-heading-svg{display:block!important;width:100%!important;height:auto!important;max-height:54px!important;overflow:visible!important}
+@media(max-width:380px){.sectiontitle.floral-heading .accounts-art-title{width:min(350px,77vw)!important;height:auto!important}}
