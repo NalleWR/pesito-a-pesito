@@ -1,1 +1,1 @@
-Pesito a Pesito v2.1 — precision top-summary layout. Extract all files to the ROOT of the existing GitHub Pages repository, replacing matching files. Do not clear browser storage. CSS and assets retain dynamic balances and working buttons.
+Pesito a Pesito v2.3 — artwork-first summary cards. Replace matching files in your GitHub Pages repository. Preserves existing localStorage keys. Do not clear browser data. Browser visual verification was blocked by the environment; test on your device.
