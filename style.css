@@ -691,3 +691,7 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 
 /* v3.1.4: lift the live balance so it has breathing room above the bottom border. */
 .overview .hero .hero-amount{top:55%!important}
+
+/* v3.1.5: trim excess vertical breathing room around the illustrated border. */
+.overview .card.hero{height:clamp(88px,22vw,104px)!important;background-size:100% 120%!important;background-position:center center!important}
+.overview .hero .hero-amount{top:56%!important}
