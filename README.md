@@ -9,3 +9,6 @@ Upload the extracted files to the root of the existing GitHub Pages repository. 
 - Privacy eye in the Mi Carterita banner toggles all displayed balances and transaction amounts; preference saved locally.
 - Redesigned account cards with crisp themed SVG icons, pink blush, burgundy, gold, and responsive tap targets.
 - No changes to existing financial data storage keys or account transactions.
+
+
+v1.6: Modern-cute account cards with individual checking/cash icons, account subtitles, refined dropdowns, and correctly aligned privacy eye covering the baked-in gear.
