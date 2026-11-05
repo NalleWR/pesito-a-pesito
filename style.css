@@ -279,3 +279,36 @@ body{background:linear-gradient(180deg,#fff0e9 0%,#fff0ed 60%,#fff3ed 100%) fixe
 .quick button.soft{background:linear-gradient(130deg,#ffe1eb,#ffd4e6);color:#9d0d42;border:1px solid #edb4c9}
 .quick button:not(.soft){background:linear-gradient(110deg,#b00043,#980036);border:1px solid #8d0035;color:white}
 @media(max-width:365px){.overview .hero{grid-template-columns:37px minmax(0,1fr) 2px minmax(0,.88fr);gap:4px;padding:8px}.hero small{font-size:9px}.hero .big{font-size:24px;letter-spacing:-1px}.hero-motto{font-size:10px}.stats .stat-icon{flex-basis:38px;width:38px}.stats small{font-size:9px}.stats strong{font-size:13px}.stats .card{gap:4px}.stats .stat-chevron{font-size:18px}}
+
+
+/* v2.1 — precision pass against the approved Mi Carterita illustration.
+   These are functional HTML cards, not a screenshot pasted into the app. */
+:root{--rose-ink:#970039;--rose-cream:#fff4f2;--rose-stroke:#e9b6c4;--antique-gold:#c79a4e}
+body{background:#fff0eb}
+.shell{padding-left:12px;padding-right:12px}
+.wallet-banner{margin-bottom:9px}
+.overview .card{background:linear-gradient(118deg,#fff8f6 0%,#fff0f2 100%);border:1px solid #e9bac5;box-shadow:0 2px 5px #8c315017;border-radius:22px}
+/* Align divider to the exact center axis of the heart flourish below. */
+.overview .hero{position:relative;display:flex;align-items:center;height:clamp(91px,24vw,113px);padding:9px 10px;gap:clamp(5px,1.4vw,9px)}
+.hero-coins{flex:0 0 14%;width:14%;height:76%;max-height:none;object-fit:contain}
+.hero-amount{flex:0 0 31%;min-width:0;align-self:center}
+.hero small{font:700 clamp(10px,2.8vw,14px)/1.12 Georgia,serif;white-space:normal;letter-spacing:-.25px;color:#8a6259}
+.hero .big{font-family:Georgia,'Times New Roman',serif;font-weight:800;font-size:clamp(23px,7.4vw,42px);line-height:1.12;letter-spacing:-1.1px;color:var(--rose-ink);margin-top:3px;white-space:nowrap}
+.hero-gold-divider{position:absolute;left:50%;top:17%;height:66%;width:2px;transform:translateX(-50%);background:linear-gradient(#ddb45e,#d8a239);border-radius:4px}
+.hero-motto{position:absolute;left:53%;right:2%;top:50%;transform:translateY(-50%);max-width:none;display:block;text-align:center;font:italic clamp(10px,2.85vw,16px)/1.3 Georgia,serif;color:#8d143d;overflow-wrap:normal}
+.stats{gap:8px;margin-top:8px}
+.stats .card{height:clamp(72px,19vw,94px);min-height:0;padding:7px 7px;gap:5px;border-radius:21px}
+.stats .stat-icon{flex:0 0 clamp(44px,11vw,60px);width:clamp(44px,11vw,60px);height:clamp(48px,13vw,66px);object-fit:contain;filter:drop-shadow(0 2px 1px #92354d1b)}
+.stats small{font:700 clamp(10px,2.7vw,14px)/1.15 Georgia,serif;color:#8b5d54;letter-spacing:-.25px}
+.stats strong{font-family:Georgia,'Times New Roman',serif;font-size:clamp(14px,4.05vw,22px);letter-spacing:-.7px;line-height:1.1;margin-top:5px;color:var(--rose-ink);font-weight:800}
+.stats .stat-chevron{font-size:clamp(19px,5vw,25px);font-weight:650;color:#881a42}
+/* Gold heart is visually centered on the divider axis, without intersecting it. */
+.overviewmore{position:relative;display:flex;align-items:center;height:37px;min-height:37px;margin:4px 0 8px;padding:0 1px}
+.overviewmore summary{font:700 clamp(12px,3.2vw,17px)/1.2 Georgia,serif;color:#98113f;padding:5px 0}
+.overviewmore:after{content:' ';position:absolute;left:calc(50% - 47px);top:50%;transform:translateY(-50%);width:94px;height:24px;max-width:none;pointer-events:none;background-repeat:no-repeat;background-size:100% 100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 30'%3E%3Cpath d='M0 15H37M83 15H120' fill='none' stroke='%23c59a51' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M60 25C55 20 43 13 45 7C47 -1 57 2 60 9C63 2 73 -1 75 7C77 13 65 20 60 25Z' fill='none' stroke='%23bb9450' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.quick{gap:9px;margin:2px 0 12px}
+.quick button{height:clamp(43px,11.2vw,55px);min-height:0;border-radius:24px;font-size:clamp(16px,4.3vw,21px);font-weight:750;letter-spacing:-.3px}
+.quick button.soft{background:linear-gradient(125deg,#ffe3ec,#ffd3e2);border:1px solid #eab1c5;color:#96033c}
+.quick button:not(.soft){background:linear-gradient(125deg,#ae0040,#a0003a 65%,#980039);border:1px solid #93013b}
+@media(max-width:380px){.hero-coins{flex-basis:13%;width:13%}.hero-amount{flex-basis:32%}.hero small{font-size:10px}.hero .big{font-size:clamp(23px,7.2vw,29px)}.hero-motto{font-size:10px}.stats .card{padding:6px 5px}.stats .stat-icon{flex-basis:39px;width:39px}.stats small{font-size:9.5px}.stats strong{font-size:clamp(13px,3.9vw,16px)}.stats .stat-chevron{font-size:18px}}
+@media(min-width:480px){.hero-amount{flex-basis:32%}.hero-coins{flex-basis:13%}.hero-motto{left:54%}}

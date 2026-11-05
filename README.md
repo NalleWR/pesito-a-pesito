@@ -1,1 +1,1 @@
-Pesito a Pesito v2.0 — approved top section recreation. Replace existing GitHub Pages files; do not clear app data. Custom artwork: gold-coins.png, heart-purse.png, savings-pig.png. All balances and buttons remain functional.
+Pesito a Pesito v2.1 — precision top-summary layout. Extract all files to the ROOT of the existing GitHub Pages repository, replacing matching files. Do not clear browser storage. CSS and assets retain dynamic balances and working buttons.
