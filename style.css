@@ -688,3 +688,6 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* v3.1.3: latest approved clean banner, with the tiny gold speck removed. */
 .overview .card.hero{background-image:url('./file_00000000bdc0820d931208e88b36dbc0.png')!important;background-size:100% 100%!important;background-position:center!important;border:0!important;box-shadow:none!important;background-color:transparent!important}
 .overview .hero .hero-amount{top:64%!important}
+
+/* v3.1.4: lift the live balance so it has breathing room above the bottom border. */
+.overview .hero .hero-amount{top:55%!important}
