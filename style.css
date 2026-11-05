@@ -440,3 +440,13 @@ body{background:#fff0eb}
 .sectiontitle.floral-heading .accounts-art-title{display:block!important;flex:1 1 auto!important;min-width:0!important;max-width:calc(100% - 76px)!important;margin:0!important;line-height:0!important}
 .sectiontitle.floral-heading .accounts-art-title img{display:block;width:100%;max-width:355px;height:auto;object-fit:contain;object-position:left center}
 .sectiontitle.floral-heading .ghost{flex:0 0 auto!important}
+
+/* v2.7: tightly cropped real heading art; compact row with no wasted vertical space. */
+.sectiontitle.floral-heading{height:auto!important;min-height:0!important;padding:0!important;margin:5px 0 8px!important;align-items:center!important;gap:5px!important}
+.sectiontitle.floral-heading .accounts-art-title{height:auto!important;min-height:0!important;padding:0!important;line-height:0!important;max-width:calc(100% - 76px)!important}
+.sectiontitle.floral-heading .accounts-art-title img{width:100%!important;max-width:355px!important;height:auto!important;max-height:43px!important;object-fit:contain!important;object-position:left center!important}
+.sectiontitle.floral-heading .ghost{padding:0 2px!important;align-self:center!important}
+.sectiontitle.floral-heading + .group{margin-top:0!important}
+/* Use the approved illustrated leaf-and-heart ornament, not keyboard characters. */
+.overviewmore:not([open]):after{background-image:url('./networth-flourish.png')!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;max-width:190px!important;height:30px!important;margin-right:0!important;min-width:75px!important}
+@media(max-width:380px){.sectiontitle.floral-heading .accounts-art-title img{max-height:37px!important}.overviewmore:not([open]):after{max-width:135px!important}}
