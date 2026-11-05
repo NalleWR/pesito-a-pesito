@@ -495,3 +495,40 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
  clip-path:polygon(50% 18%,65% 3%,84% 1%,99% 18%,99% 40%,86% 66%,51% 100%,17% 77%,1% 49%,0 24%,13% 8%,32% 7%)!important;
  transform:rotate(-8deg)!important;opacity:.75!important;pointer-events:none!important
 }
+
+/* v2.8.3: reveal net worth amount to the right of the centered ornament, without layout shift. */
+.overviewmore,.overviewmore[open]{
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr)!important;
+ grid-template-rows:37px!important;
+ height:37px!important;min-height:37px!important;max-height:37px!important;
+ overflow:visible!important;
+ align-items:center!important;
+ margin:4px 0 9px!important;padding:0!important;
+}
+.overviewmore summary,.overviewmore[open] summary{
+ grid-column:1!important;grid-row:1!important;
+ align-self:center!important;justify-self:start!important;
+ height:37px!important;min-height:37px!important;
+ padding:0!important;margin:0!important;
+}
+.overviewmore .networth-inline-value,.overviewmore[open] .networth-inline-value{
+ grid-column:1!important;grid-row:1!important;
+ justify-self:end!important;align-self:center!important;
+ display:none!important;
+ margin:0!important;padding:0!important;
+ max-width:26%!important;
+ font:700 clamp(11px,2.9vw,15px)/1.1 Georgia,serif!important;
+ color:#8e1242!important;
+ white-space:nowrap!important;
+ text-align:right!important;
+}
+.overviewmore[open] .networth-inline-value{display:block!important}
+.overviewmore::after,.overviewmore[open]::after,.overviewmore:not([open])::after{
+ top:18.5px!important;left:50%!important;
+ width:clamp(115px,39vw,190px)!important;
+}
+@media(max-width:380px){
+ .overviewmore::after,.overviewmore[open]::after,.overviewmore:not([open])::after{width:clamp(105px,36vw,150px)!important}
+ .overviewmore .networth-inline-value,.overviewmore[open] .networth-inline-value{font-size:clamp(10px,2.8vw,12px)!important}
+}
