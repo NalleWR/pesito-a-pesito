@@ -647,3 +647,6 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 
 /* v3.0.1: show the original inside rounded edges of each half of the uploaded image. */
 .stats .card.approved-stat{background-size:200% auto!important}
+
+/* v3.0.2: newest approved number-free artwork with centered Total Debt heading. */
+.stats .card.approved-stat{background-image:url('./file_0000000010a4822fbe83a01df868719a.png')!important}
