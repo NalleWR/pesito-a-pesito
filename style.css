@@ -480,3 +480,18 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
  -webkit-tap-highlight-color:transparent!important;
 }
 *:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}
+
+/* v2.8.2: keep Net worth header in the same row and exact position in both states. */
+.overviewmore,.overviewmore[open]{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:37px!important;align-items:start!important;justify-content:stretch!important;gap:0!important;margin:4px 0 9px!important;padding:0!important;min-height:37px!important}
+.overviewmore summary,.overviewmore[open] summary{grid-column:1!important;grid-row:1!important;display:flex!important;align-items:center!important;align-self:stretch!important;justify-self:start!important;min-height:37px!important;height:37px!important;padding:0!important;margin:0!important}
+.overviewmore[open]>div{grid-column:1!important;grid-row:2!important;align-self:start!important;padding:4px 0 0!important;margin:0!important}
+.overviewmore::after,.overviewmore[open]::after,.overviewmore:not([open])::after{top:18.5px!important}
+/* Subtle pink tint under the existing illustrated outline heart, retaining the original lettering. */
+.sectiontitle.floral-heading .accounts-art-title{position:relative!important;isolation:isolate!important}
+.sectiontitle.floral-heading .accounts-art-title::before{
+ content:""!important;position:absolute!important;z-index:-1!important;
+ left:0.6%!important;top:16%!important;width:16%!important;height:70%!important;
+ background:#ffd0df!important;
+ clip-path:polygon(50% 18%,65% 3%,84% 1%,99% 18%,99% 40%,86% 66%,51% 100%,17% 77%,1% 49%,0 24%,13% 8%,32% 7%)!important;
+ transform:rotate(-8deg)!important;opacity:.75!important;pointer-events:none!important
+}
