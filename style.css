@@ -637,3 +637,11 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .stats .stat-text small{font-family:Georgia,'Times New Roman',serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.25px!important;color:#702039!important;font-size:clamp(10px,2.45vw,14px)!important;line-height:1.12!important}
 .stats .stat-text strong{font-family:Georgia,'Times New Roman',serif!important;font-weight:700!important;color:#920b3e!important;font-size:clamp(15px,4.2vw,24px)!important;line-height:1.1!important;letter-spacing:-.55px!important;white-space:nowrap!important}
 .stats .stat-chevron{display:none!important}
+
+/* v2.9.4: exact user-approved combined artwork, cropped to two responsive panels.
+   Only the number area is covered by a live balance overlay. */
+.stats .card.approved-stat{position:relative!important;display:block!important;aspect-ratio:2.43 / 1!important;height:auto!important;min-height:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important;background-image:url('./a_clean_elegant_matching_palette_ui_banner_with.png')!important;background-repeat:no-repeat!important;background-size:210% auto!important;background-color:transparent!important;pointer-events:none!important}
+.stats .debt-stat.approved-stat{background-position:left center!important}
+.stats .savings-stat.approved-stat{background-position:right center!important}
+.stats .approved-stat-amount{position:absolute!important;left:40.5%!important;top:58%!important;width:55%!important;height:23%!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff3f4!important;color:#90092e!important;font:700 clamp(13px,3.25vw,26px)/1 Georgia,'Times New Roman',serif!important;letter-spacing:-.045em!important;white-space:nowrap!important;z-index:2!important}
+.stats .approved-stat::after{display:none!important}
