@@ -644,3 +644,6 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .stats .debt-stat.approved-stat{background-position:left center!important}
 .stats .savings-stat.approved-stat{background-position:right center!important}
 .stats .approved-stat-amount{position:absolute!important;left:40%!important;top:58%!important;width:57%!important;height:24%!important;display:flex!important;align-items:center!important;justify-content:center!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#90092e!important;font:700 clamp(13px,3.5vw,25px)/1 Georgia,'Times New Roman',serif!important;letter-spacing:-.04em!important;white-space:nowrap!important;z-index:2!important}
+
+/* v3.0.1: show the original inside rounded edges of each half of the uploaded image. */
+.stats .card.approved-stat{background-size:200% auto!important}
