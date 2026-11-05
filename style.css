@@ -586,3 +586,8 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
  transform:none!important;opacity:1!important;z-index:0!important;pointer-events:none!important;
 }
 .sectiontitle.floral-heading .accounts-art-title img{position:relative!important;z-index:1!important}
+
+/* v2.8.7: remove accidental solid pink heading backdrop; leave original artwork intact. */
+.sectiontitle.floral-heading .accounts-art-title::before{
+ content:none!important;display:none!important;background:none!important;
+}
