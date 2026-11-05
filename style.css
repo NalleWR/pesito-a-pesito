@@ -591,3 +591,25 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .sectiontitle.floral-heading .accounts-art-title::before{
  content:none!important;display:none!important;background:none!important;
 }
+
+/* v2.8.8: fill the original heart at artwork scale with a pale pink hue. */
+.sectiontitle.floral-heading .accounts-art-title{
+ position:relative!important;display:block!important;flex:0 1 auto!important;
+ width:min(209px,55vw)!important;height:35px!important;margin:0!important;
+ isolation:isolate!important;background:transparent!important;
+}
+.sectiontitle.floral-heading .accounts-art-title::before{
+ content:""!important;display:block!important;position:absolute!important;
+ inset:0!important;width:100%!important;height:100%!important;
+ background:transparent url('./your-accounts-heart-blush.svg') left center/100% 100% no-repeat!important;
+ clip-path:none!important;transform:none!important;opacity:1!important;
+ z-index:0!important;pointer-events:none!important;
+}
+.sectiontitle.floral-heading .accounts-art-title img{
+ position:relative!important;display:block!important;z-index:1!important;
+ width:100%!important;height:100%!important;max-width:none!important;
+ max-height:none!important;object-fit:contain!important;object-position:left center!important;
+}
+@media(max-width:380px){
+ .sectiontitle.floral-heading .accounts-art-title{width:min(185px,55vw)!important;height:31px!important}
+}
