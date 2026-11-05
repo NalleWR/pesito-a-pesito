@@ -658,3 +658,7 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* v2.9.6: finish the two clipped right-hand card edges without moving the art. */
 .stats .card.approved-stat{border:2px solid #f3a6bc!important;border-radius:22px!important;box-sizing:border-box!important;overflow:hidden!important;background-clip:padding-box!important;box-shadow:0 4px 8px #b85c7d1a!important}
 .stats .approved-stat-amount{background:#fff3f4!important}
+
+/* v2.9.7: remove the duplicate outlines and use the original artwork borders only. */
+.stats .card.approved-stat{border:0!important;border-radius:0!important;box-shadow:none!important;background-clip:border-box!important;overflow:hidden!important}
+.stats .approved-stat-amount{background:#fff3f4!important;border-radius:0!important}
