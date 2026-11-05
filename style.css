@@ -619,3 +619,8 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .sectiontitle.floral-heading .accounts-art-title::before,.sectiontitle.floral-heading .accounts-art-title::after{content:none!important;display:none!important;background:none!important}
 .sectiontitle.floral-heading .accounts-heading-svg{display:block!important;width:100%!important;height:auto!important;max-height:54px!important;overflow:visible!important}
 @media(max-width:380px){.sectiontitle.floral-heading .accounts-art-title{width:min(350px,77vw)!important;height:auto!important}}
+
+/* v2.9.1: restore compact Your Accounts heading proportions. */
+.sectiontitle.floral-heading .accounts-art-title{width:min(230px,60vw)!important;max-width:230px!important;height:auto!important;flex:0 1 auto!important}
+.sectiontitle.floral-heading .accounts-heading-svg{width:100%!important;max-height:40px!important;height:auto!important}
+@media(max-width:380px){.sectiontitle.floral-heading .accounts-art-title{width:min(210px,58vw)!important}}
