@@ -695,3 +695,52 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* v3.1.5: trim excess vertical breathing room around the illustrated border. */
 .overview .card.hero{height:clamp(88px,22vw,104px)!important;background-size:100% 120%!important;background-position:center center!important}
 .overview .hero .hero-amount{top:56%!important}
+
+/* Three user-selectable themes. Pink retains its approved artwork. */
+:root{--theme-bg:#F1EFED;--theme-surface:#fff;--theme-soft:#fff0f3;--theme-ink:#302520;--theme-muted:#766960;--theme-accent:#852d48;--theme-line:#e8e2df}
+:root[data-theme=green]{--theme-bg:#edf2e8;--theme-surface:#f9fcf6;--theme-soft:#dfeada;--theme-ink:#193b2c;--theme-muted:#506956;--theme-accent:#245d42;--theme-line:#bdcfb7;--burgundy:#245d42}
+:root[data-theme=dark]{--theme-bg:#131c19;--theme-surface:#202d26;--theme-soft:#2d4033;--theme-ink:#f0edda;--theme-muted:#b7c4b4;--theme-accent:#d8c58b;--theme-line:#53634b;--burgundy:#d8c58b}
+.theme-options{display:flex;gap:8px}
+html[data-theme]:not([data-theme=pink]),html[data-theme]:not([data-theme=pink]) body{background:var(--theme-bg)!important;color:var(--theme-ink)!important}
+html[data-theme]:not([data-theme=pink]) :is(.card,.panel,.group,.group summary,.account,.entry,.entryrow,.entrydetail,.summary,.summarygrid,.searchbar,.searchitem,.suggestions,.suggestions button,.account-options,.account-options button,.detective,.bottom,.field input,.field select,.field textarea,.batchrow input,.batchrow select){background:var(--theme-surface)!important;color:var(--theme-ink)!important;border-color:var(--theme-line)!important}
+html[data-theme]:not([data-theme=pink]) :is(button,.seg button.active){background:var(--theme-accent);color:var(--theme-bg)}
+html[data-theme]:not([data-theme=pink]) :is(button.soft,button.line,.tile,.group-symbol,.chip,.account-options-button,.seg,.group[open] summary){background:var(--theme-soft)!important;color:var(--theme-ink)!important;border-color:var(--theme-line)!important}
+html[data-theme]:not([data-theme=pink]) :is(button.ghost,button.iconbtn,.bottom button,.monthnav button,.banner-privacy){background:transparent!important;color:var(--theme-accent)!important}
+html[data-theme]:not([data-theme=pink]) :is(h1,h2,.eyebrow,a,.overviewmore summary,.networth-inline-value,.networth-inline-value::after,.more summary,.detective p){color:var(--theme-accent)!important}
+html[data-theme]:not([data-theme=pink]) :is(small,.muted,.helper,.privacy,.account-type,.tablehead,.date,.subtitle){color:var(--theme-muted)!important}
+html[data-theme]:not([data-theme=pink]) .fixedfooter{background:var(--theme-bg)!important;border-color:var(--theme-line)!important;box-shadow:none!important}
+html[data-theme]:not([data-theme=pink]) .wallet-banner{background:var(--theme-bg)!important}
+html[data-theme]:not([data-theme=pink]) .wallet-banner img{aspect-ratio:auto!important;object-fit:contain!important}
+html[data-theme]:not([data-theme=pink]) .overview .card.hero{background-size:100% 100%!important;background-color:transparent!important}
+html[data-theme=green] .overview .card.hero{background-image:url('./green_available.png')!important}
+html[data-theme=dark] .overview .card.hero{background-image:url('./dark_available.png')!important}
+html[data-theme]:not([data-theme=pink]) .stats .card.approved-stat{background-size:100% 100%!important;background-position:center!important;background-color:transparent!important}
+html[data-theme=green] .stats .debt-stat{background-image:url('./green_debt.png')!important}
+html[data-theme=green] .stats .savings-stat{background-image:url('./green_savings.png')!important}
+html[data-theme=dark] .stats .debt-stat{background-image:url('./dark_debt.png')!important}
+html[data-theme=dark] .stats .savings-stat{background-image:url('./dark_savings.png')!important}
+html[data-theme]:not([data-theme=pink]) :is(.overview .hero .hero-amount .big,.stats .approved-stat-amount){color:var(--theme-accent)!important;max-width:100%;font-size:clamp(12px,3.4vw,23px)!important}
+html[data-theme]:not([data-theme=pink]) .overview .hero .hero-amount .big{font-size:clamp(21px,6vw,36px)!important}
+html[data-theme=green] .overviewmore::after{background-image:url('./green_ornament.png')!important}
+html[data-theme=dark] .overviewmore::after{background-image:url('./dark_ornament.png')!important}
+html[data-theme=green] .accounts-heading-svg{filter:hue-rotate(125deg) saturate(.5)}
+html[data-theme=dark] .accounts-heading-svg{filter:grayscale(1) brightness(2.6)}
+html[data-theme=dark] .positive{color:#a6dbb1!important}
+html[data-theme=dark] :is(.negative,.warn,.notice){color:#ffb1b9!important}
+html[data-theme=dark] button.danger{background:#883e4c!important;color:#fff!important}
+html[data-theme]:not([data-theme=pink]) .searchbar input{background:var(--theme-surface)!important;color:var(--theme-ink)!important}
+
+/* Hide neighboring rows included in the source-sheet crops. */
+html[data-theme=green] .stats .debt-stat{background-size:100% 117%!important;background-position:center bottom!important}
+html[data-theme=green] .stats .savings-stat{background-size:100% 116%!important;background-position:center bottom!important}
+html[data-theme=dark] .stats .debt-stat{background-size:100% 135%!important;background-position:center 50%!important}
+html[data-theme=dark] .stats .savings-stat{background-size:100% 146%!important;background-position:center 44%!important}
+html[data-theme]:not([data-theme=pink]) .stats .approved-stat-amount{top:62%!important;left:40%!important;width:57%!important}
+html[data-theme=dark] .wallet-banner img{margin-top:-8px!important}
+html[data-theme]:not([data-theme=pink]) .wallet-banner{border-radius:16px!important;overflow:hidden!important}
+html[data-theme]:not([data-theme=pink]) .overviewmore::after{background-size:100% auto!important;background-position:center!important;height:18px!important;overflow:hidden!important}
+html[data-theme]:not([data-theme=pink]) .quick button{background-size:100% 115%!important;background-position:center!important;background-repeat:no-repeat!important;color:transparent!important;border:0!important;box-shadow:none!important;min-height:40px!important;border-radius:24px!important}
+html[data-theme=green] .quick [data-action=new-account]{background-image:url('./green_account_button.png')!important}
+html[data-theme=green] .quick [data-action=new-expense]{background-image:url('./green_transaction_button.png')!important}
+html[data-theme=dark] .quick [data-action=new-account]{background-image:url('./dark_account_button.png')!important}
+html[data-theme=dark] .quick [data-action=new-expense]{background-image:url('./dark_transaction_button.png')!important}
