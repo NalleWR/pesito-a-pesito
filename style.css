@@ -435,3 +435,8 @@ body{background:#fff0eb}
  .sectiontitle.floral-heading h2{font-size:clamp(23px,6.6vw,28px)!important;gap:5px!important}
  .sectiontitle.floral-heading .goldflower{font-size:30px!important}
 }
+
+/* Original illustrated Your Accounts lettering; no fallback font rendering. */
+.sectiontitle.floral-heading .accounts-art-title{display:block!important;flex:1 1 auto!important;min-width:0!important;max-width:calc(100% - 76px)!important;margin:0!important;line-height:0!important}
+.sectiontitle.floral-heading .accounts-art-title img{display:block;width:100%;max-width:355px;height:auto;object-fit:contain;object-position:left center}
+.sectiontitle.floral-heading .ghost{flex:0 0 auto!important}
