@@ -1,5 +1,5 @@
-/* Pesito a Pesito 1.4 — network-first updates; offline fallback. */
-const CACHE='pesito-shell-v140';
+/* Pesito a Pesito 1.5 — network-first updates; offline fallback. */
+const CACHE='pesito-shell-v150';
 const ASSETS=['./index.html','./style.css?v=140','./app.js?v=140','./manifest.webmanifest','./icon-192.png','./icon-512.png','./detective-art.png','./mi-carterita-banner.webp'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await Promise.allSettled(ASSETS.map(url=>cache.add(url)));await self.skipWaiting()})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('pesito-shell-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()));

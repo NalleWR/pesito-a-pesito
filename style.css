@@ -52,3 +52,26 @@ body{min-width:0;overflow-x:hidden}.shell{padding:18px 14px 115px}.top{margin-bo
 .group-arrow{display:inline-block;transition:transform .18s ease}
 .group[open] .group-arrow{transform:rotate(180deg)}
 .account:focus-visible,.group summary:focus-visible{outline:2px solid #852d48;outline-offset:-2px}
+
+/* v1.5: Rosita Elegante account cards and working privacy eye */
+.wallet-banner{overflow:visible;isolation:isolate}
+.banner-privacy{opacity:1;pointer-events:auto;display:grid;place-items:center;right:1.6%;top:6%;width:clamp(30px,8vw,42px);height:clamp(30px,8vw,42px);padding:7px;border:2px solid #fff0e9;background:#8e2146;color:white;box-shadow:0 2px 5px #5a173448;z-index:2}
+.banner-privacy svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.banner-privacy:active{transform:scale(.95)}
+.group{border-color:#e9c9d0;border-radius:18px;box-shadow:0 3px 10px #852d4810;position:relative}
+.group summary{padding:12px 13px;min-height:61px;background:linear-gradient(105deg,#fff8f8,#fffdfc);gap:7px}
+.group[open] summary{background:linear-gradient(110deg,#fff0f3,#fff9fa)}
+.group-symbol{width:40px;height:40px;border:1px solid #f6d9e0;border-radius:13px;background:linear-gradient(145deg,#ffe3ea,#fff5f6);color:#92284d;box-shadow:0 1px 3px #852d4810}
+.group-symbol svg,.tile svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.group-copy b{font-size:14px;color:#482832}.group-copy small{font-size:11px}
+.group-end b{font-size:13px;color:#4b2930}
+.group-arrow{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;font-size:23px;color:#9e7048}
+.group .account{padding:10px 13px;min-height:51px;background:#fffdfd}
+.group .account:active{background:#fff1f5}
+.group .accountname{font-weight:650;color:#442d30;min-width:0}
+.group .tile{width:35px;height:35px;flex-shrink:0;background:#fff0f3;color:#8d2c4a;border-radius:11px}
+.group .account strong{white-space:nowrap;font-size:12px;color:#442d30}
+.group .chev{font-size:19px;color:#ac8055;margin-left:2px}
+.group[open] .account:first-of-type{border-top:1px solid #efdde0}
+.sectiontitle.floral-heading{margin-top:3px}
+@media(max-width:360px){.group summary{padding:10px}.group-label,.group-end{gap:5px}.group-symbol{width:35px;height:35px}.group-copy b{font-size:12px}.group-end b{font-size:12px}}
