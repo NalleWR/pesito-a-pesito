@@ -675,3 +675,8 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* v3.1.0: approved single-outline available-money artwork. */
 .overview .card.hero{background-image:url('./file_000000006f0c81f7826de271a2051dcd.png')!important;background-size:100% 100%!important;background-position:center!important}
 .overview .hero .hero-amount{top:65%!important}
+
+/* v3.1.1: artwork has generous baked-in margins; crop those margins visually without stretching the lettering. */
+.overview .card.hero{background-size:100% 155%!important;background-position:center 50%!important;background-repeat:no-repeat!important}
+.overview .hero .hero-amount{top:64%!important}
+.overview .hero .hero-amount .big{font-size:clamp(22px,6.5vw,36px)!important}
