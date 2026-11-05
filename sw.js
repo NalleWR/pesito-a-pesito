@@ -1,6 +1,6 @@
-/* Pesito a Pesito 1.2.1 — network-first updates; offline fallback. */
-const CACHE='pesito-shell-v121';
-const ASSETS=['./index.html','./style.css?v=121','./app.js?v=121','./manifest.webmanifest','./icon-192.png','./icon-512.png','./detective-art.png'];
+/* Pesito a Pesito 1.4 — network-first updates; offline fallback. */
+const CACHE='pesito-shell-v140';
+const ASSETS=['./index.html','./style.css?v=140','./app.js?v=140','./manifest.webmanifest','./icon-192.png','./icon-512.png','./detective-art.png','./mi-carterita-banner.webp'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await Promise.allSettled(ASSETS.map(url=>cache.add(url)));await self.skipWaiting()})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('pesito-shell-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()));
 self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;event.respondWith((async()=>{try{const response=await fetch(req,{cache:'no-store'});if(response.ok){const cache=await caches.open(CACHE);await cache.put(req,response.clone())}return response}catch{const cached=await caches.match(req);if(cached)return cached;if(req.mode==='navigate')return await caches.match('./index.html')||Response.error();return Response.error()}})())});
