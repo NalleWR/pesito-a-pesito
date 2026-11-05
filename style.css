@@ -653,3 +653,6 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 
 /* v3.0.3: gently round card clipping only; no additional border or resizing. */
 .stats .card.approved-stat{border-radius:22px!important;overflow:hidden!important}
+
+/* v3.0.4: smaller clipping radius to preserve the original illustrated lower corners. */
+.stats .card.approved-stat{border-radius:12px!important}
