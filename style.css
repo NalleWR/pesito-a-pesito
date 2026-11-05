@@ -573,3 +573,16 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
  transform:rotate(-8deg)!important;
  clip-path:polygon(47% 22%,58% 6%,73% 2%,87% 8%,96% 21%,97% 38%,89% 57%,76% 74%,54% 96%,35% 81%,19% 66%,7% 47%,3% 29%,10% 14%,25% 10%,37% 13%)!important;
 }
+
+/* v2.8.6: true artwork-coordinate heart fill, no displaced CSS polygon. */
+.sectiontitle.floral-heading .accounts-art-title{position:relative!important;isolation:isolate!important}
+.sectiontitle.floral-heading .accounts-art-title::before{
+ content:""!important;display:block!important;position:absolute!important;
+ inset:0!important;left:0!important;top:0!important;right:0!important;bottom:0!important;
+ width:100%!important;height:100%!important;
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201847%20309%22%3E%3Cpath%20fill%3D%22%23f7cbd8%22%20d%3D%22M%20137%20134%20C%20117%20103%2083%2081%2055%2092%20C%2023%20103%2021%20135%2037%20165%20C%2055%20200%20107%20232%20175%20262%20C%20198%20209%20221%20143%20231%2092%20C%20238%2055%20224%2029%20198%2030%20C%20165%2031%20141%2076%20137%20134%20Z%22%2F%3E%3C%2Fsvg%3E")!important;
+ background-repeat:no-repeat!important;background-position:left center!important;
+ background-size:100% 100%!important;clip-path:none!important;
+ transform:none!important;opacity:1!important;z-index:0!important;pointer-events:none!important;
+}
+.sectiontitle.floral-heading .accounts-art-title img{position:relative!important;z-index:1!important}
