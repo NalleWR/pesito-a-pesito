@@ -126,3 +126,68 @@ body{min-width:0;overflow-x:hidden}.shell{padding:18px 14px 115px}.top{margin-bo
 .group .account strong{font-size:12px;color:#74233f}.group .chev{color:#852d48}
 .group summary:active,.group .account:active{filter:brightness(.985)}
 @media(max-width:370px){.group summary{padding:7px 9px}.group-symbol{width:43px;height:43px}.group-symbol svg.illustrated-icon{width:39px;height:39px}.group-end{gap:4px}.group-copy b{font-size:13px}.group .account{padding-left:11px}}
+
+
+/* v1.8 — full dashboard styling matched to the approved Mi Carterita concept.
+   Keep decorative art distinct from live controls and all values dynamic. */
+:root{--rose-ink:#791d3b;--rose-soft:#ffe9ef;--rose-line:#eec7cd}
+body{background:#fff0eb;background:linear-gradient(180deg,#fff3ed 0%,#fff0ec 60%,#fff6f2 100%) fixed;color:#512533}
+.shell{max-width:540px;padding:12px 13px 106px}
+.wallet-banner{margin:0 0 9px;border-radius:13px;box-shadow:none;background:transparent}
+.wallet-banner img{display:block;width:100%;aspect-ratio:1024/297;object-fit:contain}
+.banner-privacy{right:3.7%;top:6%;width:8%;min-width:31px;max-width:44px;background:#941a48;border:3px solid #fff3eb;box-shadow:0 1px 5px #64193855;z-index:3}
+.overview{margin-top:3px}
+.overview .card{background:linear-gradient(125deg,#fff9f7,#fff0ef);border:1px solid #efc8c6;box-shadow:0 2px 5px #a63d5420;border-radius:18px}
+.overview .hero{min-height:84px;padding:12px 17px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero small{font-size:12px;font-weight:650;color:#94645d}
+.hero .big{font-size:clamp(30px,8.6vw,39px);line-height:1.13;font-weight:800;letter-spacing:-1.4px;color:#850e3c}
+.hero-ornament{position:absolute;right:19%;top:26px;font-size:13px;color:#d5a45e;letter-spacing:5px}
+.hero-ornament span{font-size:13px}
+.hero-motto{position:absolute;right:12px;top:29%;font:italic 12px/1.35 Georgia,serif;text-align:center;color:#961743;max-width:36%}
+.hero:has(.hero-motto) .big{max-width:63%}
+.stats{gap:8px;margin-top:8px}
+.stats .card{min-height:69px;padding:10px 9px;display:flex;align-items:center;gap:7px}
+.stat-icon{width:37px;height:37px;border-radius:50%;background:#ffe1e8;display:grid;place-items:center;flex-shrink:0;font-size:22px;filter:saturate(.9)}
+.stat-text{min-width:0;flex:1}
+.stats small{font-size:10px;font-weight:700;line-height:1.2;display:block;color:#865b59}
+.stats strong{font-size:clamp(13px,4vw,19px);color:#78133a;margin-top:4px;white-space:nowrap}
+.stat-chevron{font-size:22px;color:#8b2748;line-height:1}
+.overviewmore{margin:4px 0 9px;padding:0 0 9px;border:0;font-size:12px;position:relative}
+.overviewmore summary{color:#a31b4c;font-weight:700;padding:6px 0;list-style:none}
+.overviewmore summary:before{content:'▸';margin-right:5px}
+.overviewmore[open] summary:before{content:'▾'}
+.overviewmore:after{content:'─── ♡ ───';font-family:Georgia,serif;font-size:18px;letter-spacing:1px;color:#c59a55;margin-top:-26px;pointer-events:none;text-align:right;padding-right:13%;}
+.quick{margin:5px 0 12px;gap:9px}
+.quick button{min-height:45px;border-radius:17px;font-size:15px;font-weight:750;padding:9px 6px;box-shadow:0 2px 3px #9c3d4e13}
+.quick .soft{background:linear-gradient(110deg,#ffe5eb,#ffd5e2);color:#8a1943;border:1px solid #f3b8c7}
+.quick button:not(.soft){background:linear-gradient(110deg,#8a1741,#ad0f4b 75%,#8b1742);color:white}
+.sectiontitle.floral-heading{margin:0 0 9px}
+.sectiontitle.floral-heading h2{font:italic 27px/1.2 Georgia,serif;letter-spacing:-.8px;color:#781a3b;gap:7px}
+.sectiontitle.floral-heading .goldflower{font:normal 27px/1 Georgia,serif;color:#aa1d4e}
+.sectiontitle .ghost{font-weight:750;color:#a3184a;font-size:12px}
+.group{margin-bottom:7px;border:1px solid #eabfc2;border-radius:18px;background:linear-gradient(120deg,#fff8f8,#fff0f0);box-shadow:0 2px 5px #8432471a;overflow:hidden}
+.group summary{min-height:54px;padding:7px 12px;background:linear-gradient(100deg,#fff0f2,#ffe5ed 75%,#fff0f1);border-radius:17px;gap:7px}
+.group[open] summary{border-radius:17px 17px 0 0;background:linear-gradient(100deg,#ffeaf0,#ffdee9 70%,#fff0f2)}
+.group-label{gap:8px;min-width:0}
+.group-symbol{width:45px;height:43px;flex-shrink:0;border-radius:14px;background:radial-gradient(circle at 45% 30%,#fff7f8,#ffe2e9);box-shadow:none;border:0}
+.group-symbol svg.illustrated-icon{width:40px;height:40px;filter:drop-shadow(0 1px 1px #85354b44)}
+.group-copy b{font-size:13.5px;line-height:1.2;color:#6c1536;font-weight:800}
+.group-copy small{font-size:10px;color:#8b5d66}
+.group-end{gap:7px}
+.group-end b{font-size:13px;color:#75163b;font-weight:800}
+.group-arrow{color:#9d1c49}
+.group .account{min-height:42px;padding:5px 11px 5px 15px;background:linear-gradient(95deg,#fff0f3,#fff9f9);border-left:3px solid #f5a6bf}
+.group .account+.account{border-top:1px solid #eac8cf}
+.group .accountname{gap:8px}
+.group .tile{width:34px;height:34px;border-radius:50%;background:#ffe1e8;border:0;box-shadow:none}
+.group .tile svg.illustrated-icon{width:32px;height:32px}
+.group .account-copy b{font-size:12px;color:#6d1739;font-weight:800}
+.group .account-copy small{font-size:10px;color:#946b70}
+.group .account strong{font-size:12px;color:#6e1739}
+.group .chev{color:#922347;font-size:21px}
+.bottom{background:linear-gradient(180deg,#fff9f5,#fff1ee);border:1px solid #eac7c5;border-radius:20px 20px 0 0;box-shadow:0 -2px 10px #762c4314;padding:6px 12px max(6px,env(safe-area-inset-bottom));min-height:64px}
+.bottom:before,.bottom:after{content:'✧  ♡';position:absolute;top:24px;color:#c59a55;font-size:14px;pointer-events:none}
+.bottom:before{left:5%}.bottom:after{right:5%;transform:scaleX(-1)}
+.bottom button{font-size:11px;color:#785b54;max-width:140px}
+.bottom button.active{color:#9c1a4b;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+@media(max-width:380px){.shell{padding-left:10px;padding-right:10px}.hero-motto{font-size:10px}.stats .card{padding:8px 5px;gap:5px}.stat-icon{width:30px;height:30px;font-size:18px}.stats small{font-size:9px}.stats strong{font-size:13px}.group-symbol{width:39px;height:39px}.group-symbol svg.illustrated-icon{width:36px;height:36px}.group-copy b{font-size:12px}.group-end b{font-size:12px}.group summary{padding:6px 9px}.sectiontitle.floral-heading h2{font-size:24px}}

@@ -1,7 +1,5 @@
-Pesito a Pesito v1.7 — illustrated modern-cute account cards.
+Pesito a Pesito v1.8 — Mi Carterita dashboard redesign
 
-Upload all files from this ZIP to the root of the existing GitHub Pages repository, replacing matching files. Do not clear browser data.
+Upload all files from this ZIP into the root of the existing GitHub Pages repository, replacing matching files. Preserve local browser data; do not uninstall or clear site storage.
 
-Changes: custom illustrated account group and account icons, pink layered group headers, slim accent for account rows, real chevron SVG, tighter spacing. Original mascot/banner and privacy toggle retained. No repetitive floral account borders.
-
-This is working HTML/CSS/JS, not a flattened mockup.
+The dashboard is functional HTML/CSS with live balances, expandable accounts, transactions, and a working privacy toggle. The approved concept is an illustration, so browser rendering will not be pixel-identical.
