@@ -555,3 +555,21 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
  transform:rotate(-9deg)!important;
  clip-path:polygon(50% 16%,62% 3%,79% 1%,96% 15%,100% 35%,92% 55%,75% 75%,51% 100%,25% 78%,8% 57%,0 34%,7% 13%,24% 4%,40% 7%)!important
 }
+
+/* v2.8.5: mirrored net worth typography and right-end triangle. */
+.overviewmore .networth-inline-value,.overviewmore[open] .networth-inline-value{
+ font:700 clamp(11px,3.2vw,16px)/1.15 Georgia,serif!important;
+ color:#95113e!important;gap:5px!important;max-width:34%!important;
+}
+.overviewmore .networth-inline-value::after{
+ content:'◂'!important;display:inline-block!important;
+ font:700 .9em/1 Georgia,serif!important;color:#9b0642!important;
+ margin-left:2px!important;
+}
+/* Tint stays inside the existing burgundy hand-drawn outline. */
+.sectiontitle.floral-heading .accounts-art-title::before{
+ left:10px!important;top:5px!important;width:34px!important;height:36px!important;
+ background:#f9c4d5!important;opacity:.65!important;
+ transform:rotate(-8deg)!important;
+ clip-path:polygon(47% 22%,58% 6%,73% 2%,87% 8%,96% 21%,97% 38%,89% 57%,76% 74%,54% 96%,35% 81%,19% 66%,7% 47%,3% 29%,10% 14%,25% 10%,37% 13%)!important;
+}
