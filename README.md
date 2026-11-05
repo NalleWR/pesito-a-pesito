@@ -1,1 +1,1 @@
-Pesito a Pesito v2.3 — artwork-first summary cards. Replace matching files in your GitHub Pages repository. Preserves existing localStorage keys. Do not clear browser data. Browser visual verification was blocked by the environment; test on your device.
+Pesito a Pesito v2.5 — matched reference styling for summary cards, outlined purse and piggy artwork, net worth ornament and Your Accounts heading. Extract all files to the repository root. Existing local data is not reset.
