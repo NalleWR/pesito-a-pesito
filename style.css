@@ -654,3 +654,7 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .stats .debt-stat.approved-stat{background-position:0% 50%!important}
 .stats .savings-stat.approved-stat{background-position:100% 50%!important}
 .stats .approved-stat-amount{left:36%!important;top:49%!important;width:62%!important;height:37%!important;background:#fff3f4!important;font-size:clamp(13px,3.3vw,24px)!important;letter-spacing:-.04em!important}
+
+/* v2.9.6: finish the two clipped right-hand card edges without moving the art. */
+.stats .card.approved-stat{border:2px solid #f3a6bc!important;border-radius:22px!important;box-sizing:border-box!important;overflow:hidden!important;background-clip:padding-box!important;box-shadow:0 4px 8px #b85c7d1a!important}
+.stats .approved-stat-amount{background:#fff3f4!important}
