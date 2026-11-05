@@ -104,3 +104,25 @@ body{min-width:0;overflow-x:hidden}.shell{padding:18px 14px 115px}.top{margin-bo
 .banner-privacy{right:3.75%;top:8%;width:7.4%;height:auto;aspect-ratio:1;min-width:0;min-height:0;max-width:none;max-height:none;border:2px solid #fff0e9;padding:clamp(4px,1.3vw,8px);background:#921943;box-shadow:0 1px 3px #6b244b33}
 .banner-privacy svg{width:100%;height:100%}
 @media(max-width:360px){.group .account-copy small{font-size:9px}.group .accountname{gap:7px}.group .tile{width:30px;height:30px}}
+
+/* v1.7 — faithfully styled modern-cute account cards, no floral borders */
+.sectiontitle.floral-heading h2{font-family:Georgia,serif;font-style:italic;font-size:23px;color:#852d48;letter-spacing:-.5px}
+.group{margin-bottom:9px;border:1px solid #efbac8;border-radius:18px;background:#fff9f9;box-shadow:0 2px 2px #852d4808,0 5px 12px #852d480b;overflow:hidden}
+.group summary{padding:8px 12px;min-height:65px;border-radius:17px;background:linear-gradient(115deg,#ffe7ef 0%,#fff1f4 48%,#fff7f8 100%);transition:background .15s ease}
+.group[open] summary{background:linear-gradient(115deg,#ffdfeb 0%,#ffedf2 58%,#fff6f7 100%);border-radius:17px 17px 0 0}
+.group-label{gap:10px}.group-symbol{width:49px;height:49px;border:0;border-radius:16px;background:radial-gradient(circle at 30% 25%,#fff6f8,#ffdbe6);box-shadow:inset 0 0 0 1px #ffe6eb;color:#852d48}
+.group-symbol svg.illustrated-icon{width:42px;height:42px;stroke:none}
+.group-copy b{font-size:14px;font-weight:750;color:#70263e}.group-copy small{font-size:10.5px;color:#936b74;margin-top:1px}
+.group-end{gap:8px}.group-end b{font-size:13px;color:#76233e}
+.group-arrow{width:22px;height:22px;color:#8d2a4a;transform:none!important;display:grid;place-items:center}
+.group-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+.group[open] .group-arrow svg{transform:rotate(180deg)}
+.group[open] .account:first-of-type{border-top:1px solid #f4d4dc}
+.group .account{padding:7px 12px 7px 17px;min-height:54px;background:linear-gradient(100deg,#fff5f7,#fffafa);border-left:3px solid #f2a7bd}
+.group .account+.account{border-top:1px solid #f3dce2}
+.group .accountname{gap:9px}.group .tile{width:38px;height:38px;border-radius:13px;background:#ffe8ee;box-shadow:inset 0 0 0 1px #ffdee7}
+.group .tile svg.illustrated-icon{width:34px;height:34px;stroke:none}
+.group .account-copy b{font-size:13px;color:#6e253e}.group .account-copy small{font-size:10px;color:#96737d}
+.group .account strong{font-size:12px;color:#74233f}.group .chev{color:#852d48}
+.group summary:active,.group .account:active{filter:brightness(.985)}
+@media(max-width:370px){.group summary{padding:7px 9px}.group-symbol{width:43px;height:43px}.group-symbol svg.illustrated-icon{width:39px;height:39px}.group-end{gap:4px}.group-copy b{font-size:13px}.group .account{padding-left:11px}}
