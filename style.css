@@ -624,3 +624,8 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .sectiontitle.floral-heading .accounts-art-title{width:min(230px,60vw)!important;max-width:230px!important;height:auto!important;flex:0 1 auto!important}
 .sectiontitle.floral-heading .accounts-heading-svg{width:100%!important;max-height:40px!important;height:auto!important}
 @media(max-width:380px){.sectiontitle.floral-heading .accounts-art-title{width:min(210px,58vw)!important}}
+
+/* v2.9.2: further reduce Your Accounts heading for mobile. */
+.sectiontitle.floral-heading .accounts-art-title{width:min(185px,49vw)!important;max-width:185px!important}
+.sectiontitle.floral-heading .accounts-heading-svg{max-height:32px!important}
+@media(max-width:380px){.sectiontitle.floral-heading .accounts-art-title{width:min(170px,47vw)!important}}
