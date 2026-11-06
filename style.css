@@ -696,3 +696,13 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .overview .card.hero{height:clamp(88px,22vw,104px)!important;background-size:100% 120%!important;background-position:center center!important}
 .overview .hero .hero-amount{top:56%!important}
 
+
+/* Approved botanical artwork: preserve transparent silhouette and natural proportions. */
+.wallet-banner.botanical-banner{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;margin:0 0 8px!important}
+.wallet-banner.botanical-banner img{width:100%!important;height:auto!important;aspect-ratio:3 / 1!important;object-fit:contain!important;display:block!important}
+.botanical-summary{position:relative;width:100%;aspect-ratio:3 / 1;container-type:inline-size}
+.botanical-summary-image{display:block;width:100%;height:auto}
+.botanical-balance{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap;min-width:0;color:#123f16;font-family:Georgia,'Times New Roman',serif;font-weight:700;line-height:1;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.botanical-available{left:16.2%;top:27%;width:67.8%;height:19%;font-size:clamp(20px,7cqw,35px)}
+.botanical-debt{left:19.1%;top:78%;width:28%;height:12.5%;font-size:clamp(12px,3.8cqw,20px)}
+.botanical-savings{left:66%;top:78%;width:30%;height:12.5%;font-size:clamp(12px,3.8cqw,20px)}
