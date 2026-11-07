@@ -741,3 +741,14 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 :root{background:#F0DCE3}
 html,body{min-height:100%;background:#F0DCE3}
 .fixedfooter{background:#F0DCE3;box-shadow:0 -8px 20px #F0DCE3}
+
+
+/* Installment purchases: quiet functional cards beneath the account balance. */
+.purchase-plans{margin:16px 0;padding:14px;background:#fff7fa;border:1px solid #d7b9c4;border-radius:16px;color:#123f16}
+.plan-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.plan-heading h2{font-size:18px;margin:0}.plan-heading button{font-size:13px}
+.plan-card{background:#fff;border:1px solid #e4ccd4;border-radius:12px;margin:10px 0;padding:10px}.plan-open{display:flex;width:100%;justify-content:space-between;align-items:center;gap:8px;text-align:left;background:transparent;color:#123f16;padding:4px}.plan-open small{display:block;margin-top:5px}.plan-card progress{width:100%;height:8px;accent-color:#527349}.plan-notice{font-size:12px;line-height:1.6;padding:10px;background:#f1e4ea;border-radius:8px}
+#plan-dialog,.plan-help-dialog{width:min(94vw,480px);max-height:85dvh;overflow:auto;border:1px solid #d7b9c4;border-radius:18px;background:#fff9fc;color:#123f16;padding:18px;box-shadow:0 16px 60px #2d132e40}
+#plan-dialog::backdrop,.plan-help-dialog::backdrop{background:#28152b66}#plan-dialog header{display:flex;align-items:center;justify-content:space-between;gap:12px}#plan-dialog h2,.plan-help-dialog h2{font-size:20px;margin:0 0 12px}#plan-dialog header button{padding:5px 12px;font-size:22px;background:transparent;color:#852d48}
+.plan-dialog-body{line-height:1.5}.plan-total{font-size:28px}.plan-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.plan-action-box{position:relative;border:1px solid #d7b9c4;background:#fff;border-radius:12px;min-width:0}.plan-action-box>button:first-child{width:100%;min-height:92px;padding:36px 10px 14px;background:transparent;color:#123f16;font-size:14px}.plan-action-box .plan-info{position:absolute;top:0;right:0;width:40px;height:36px;padding:4px;background:transparent;color:#852d48;font-size:21px}.plan-error{color:#992941;font-size:14px}.plan-check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:13px}.plan-check input{width:20px;height:20px;flex-shrink:0}.installment-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #e4ccd4}.installment-row>span{flex:1;min-width:0}.installment-row small{display:block}.installment-row input{width:100%;display:block;padding:8px;margin-bottom:6px;border:1px solid #d7b9c4;border-radius:8px;font-size:16px;background:white;color:#123f16}#plan-dialog [hidden]{display:none!important}.plan-dialog-body .field input,.plan-dialog-body .field select{width:100%;min-width:0}.plan-dialog-body button{margin:4px 0}.plan-help-dialog p{line-height:1.6}
+
+.field[hidden]{display:none!important}
