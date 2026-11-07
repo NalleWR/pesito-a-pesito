@@ -720,12 +720,15 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* Match the visible edges, accounting for transparent margins in each source. */
 .wallet-banner.botanical-banner{width:104%!important;margin-left:-2%!important;margin-right:-2%!important}
 
-/* Quiet, expandable financial snapshot; approved artwork remains intact. */
-.snapshot-disclosure{margin:9px 0 5px;border-top:1px solid #cad3b6;border-bottom:1px solid #cad3b6}
-.snapshot-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;cursor:pointer;padding:11px 5px;color:#123f16;font:700 13px/1.3 'Times New Roman',Times,serif}
-.snapshot-disclosure>summary::-webkit-details-marker{display:none}
-.snapshot-disclosure>summary:focus-visible{outline:2px solid #567d37;outline-offset:2px;border-radius:4px}
-.snapshot-chevron{display:inline-block;font:20px/1 system-ui,sans-serif;transition:transform .15s}
-.snapshot-disclosure[open] .snapshot-chevron{transform:rotate(180deg)}
-.snapshot-disclosure .illustrated-snapshot{margin:0 0 8px}
-@media(prefers-reduced-motion:reduce){.snapshot-chevron{transition:none}}
+
+/* Animate the existing artwork without replacing the page during a toggle. */
+.snapshot-disclosure{margin:9px 0 5px}
+.snapshot-disclosure>.snapshot-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;height:44px;box-sizing:border-box;padding:0 8px;border:0;border-top:1px solid #cad3b6;border-bottom:1px solid #cad3b6;border-radius:0;background:transparent;color:#123f16;font:700 13px/1.3 'Times New Roman',Times,serif;cursor:pointer}
+.snapshot-toggle:focus-visible{outline:2px solid #567d37;outline-offset:2px}
+.snapshot-chevron{display:block;width:22px;height:22px;flex:0 0 22px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transition:transform 320ms ease}
+.snapshot-disclosure.is-open .snapshot-chevron{transform:rotate(180deg)}
+.snapshot-reveal{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows 360ms cubic-bezier(.22,.61,.36,1),opacity 260ms ease}
+.snapshot-disclosure.is-open .snapshot-reveal{grid-template-rows:1fr;opacity:1}
+.snapshot-reveal-inner{min-height:0;overflow:hidden}
+.snapshot-disclosure .illustrated-snapshot{margin:8px 0}
+@media(prefers-reduced-motion:reduce){.snapshot-chevron,.snapshot-reveal{transition:none}}
