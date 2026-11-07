@@ -732,3 +732,7 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .snapshot-reveal-inner{min-height:0;overflow:hidden}
 .snapshot-disclosure .illustrated-snapshot{margin:8px 0}
 @media(prefers-reduced-motion:reduce){.snapshot-chevron,.snapshot-reveal{transition:none}}
+
+/* Full-width approved rectangular header; its lower border is part of the art. */
+.wallet-banner.rectangular-banner{width:calc(100% + 24px)!important;max-width:none!important;margin:-10px -12px 12px!important;padding:0!important;border:0!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;overflow:hidden!important}
+.wallet-banner.rectangular-banner img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;aspect-ratio:2172 / 644!important;object-fit:contain!important;object-position:center!important}
