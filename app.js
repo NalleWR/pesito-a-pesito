@@ -120,15 +120,18 @@ function installBackGuard(){
  const guardState=()=>({...(history.state||{}),pesitoBackGuard:BACK_GUARD});
  // One same-URL guard entry protects the initial app document from an accidental Back.
  if(history.state?.pesitoBackGuard!==BACK_GUARD)history.pushState(guardState(),'');
- window.addEventListener('popstate',()=>{
+ window.addEventListener('popstate',e=>{
   if(allowHistoryExit)return;
+  // Returning to the existing guard is a restoration, not another Back press.
+  if(e.state?.pesitoBackGuard===BACK_GUARD)return;
   if(page==='wallet'&&Date.now()<exitBackDeadline){
    allowHistoryExit=true;
    history.back();
    return;
   }
-  // Re-arm before changing screens, including when discarding an edit is cancelled.
-  history.pushState(guardState(),'');
+  // Reuse the original entry. Chrome may skip new entries pushed from a popstate
+  // handler without a fresh user activation, which let a later Android Back exit.
+  history.forward();
   if(accountMenuOpen){accountMenuOpen=false;exitBackDeadline=0;render(true);return}
   if(page!=='wallet'){
    exitBackDeadline=0;
