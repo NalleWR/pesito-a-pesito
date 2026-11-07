@@ -711,5 +711,8 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* Approved transparent snapshot artwork, with live amounts in the blank wells. */
 .illustrated-snapshot{position:relative;container-type:inline-size;width:100%;aspect-ratio:2172 / 414;overflow:hidden;margin:9px 0 5px;background:transparent}
 .illustrated-snapshot>img{position:absolute;display:block;width:100%;height:auto;max-width:none;left:0;top:-41.06%;pointer-events:none}
-.snapshot-live{position:absolute;top:59%;height:25%;display:flex;align-items:center;justify-content:center;min-width:0;white-space:nowrap;color:#852d48;font-family:'Times New Roman',Times,serif;font-style:normal;font-weight:700;font-size:clamp(10px,3.3cqw,18px);line-height:1;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.snapshot-live{position:absolute;top:59%;height:25%;display:flex;align-items:center;justify-content:center;min-width:0;white-space:nowrap;color:#123f16;font-family:'Times New Roman',Times,serif;font-style:normal;font-weight:700;font-size:clamp(10px,3.3cqw,18px);line-height:1;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
 .snapshot-net{left:5%;width:27%}.snapshot-income{left:36.5%;width:26.6%}.snapshot-spent{left:67.2%;width:27.6%}
+
+/* Align illustrated summary edges with the snapshot below, compensating for transparent source margins. */
+.botanical-summary{width:103.5%;margin-left:-1.75%;margin-right:-1.75%}
