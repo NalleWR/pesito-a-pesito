@@ -715,4 +715,7 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 .snapshot-net{left:5%;width:27%}.snapshot-income{left:36.5%;width:26.6%}.snapshot-spent{left:67.2%;width:27.6%}
 
 /* Align illustrated summary edges with the snapshot below, compensating for transparent source margins. */
-.botanical-summary{width:103.5%;margin-left:-1.75%;margin-right:-1.75%}
+.botanical-summary{width:103.9%;margin-left:-1.95%;margin-right:-1.95%}
+
+/* Match the visible edges, accounting for transparent margins in each source. */
+.wallet-banner.botanical-banner{width:103.4%!important;margin-left:-1.7%!important;margin-right:-1.7%!important}
