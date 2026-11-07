@@ -91,8 +91,8 @@ function accountForm(){let a=account(accountEditId);return `${header(a?'Edit Acc
 function categoryForm(){let c=data.categories.find(x=>x.id===categoryId);return `${header(c?'Edit Category':'New Category',true)}<div class="panel">${field('category-name','Name',textInput('category-name',c?.name||'','maxlength="50"'))}<div class="twocol">${field('category-icon','Icon',textInput('category-icon',c?.icon||'◇','maxlength="3"'))}${field('category-color','Color',`<input type="color" id="category-color" value="${esc(c?.color||'#AD8051')}">`)}</div>${c?'<button class="danger tiny" data-action="delete-category">Delete category</button>':''}</div><div class="fixedfooter"><button class="line" data-action="back">Cancel</button><button data-action="save-category">Save category</button></div>`}
 function adjustAccountPage(){let a=account(currentAccount);if(!a)return wallet();return `${header('Adjust Balance',true)}<div class="panel"><h2>${esc(a.name)}</h2><p class="helper">Current balance: <b>${visibleMoney(balance(a))}</b></p>${field('target-balance','Correct balance (USD)',textInput('target-balance',(balance(a)/100).toFixed(2),'inputmode="decimal"'))}<p class="helper">This records a balance correction in the account’s opening balance. Existing transactions stay unchanged.</p><button class="primary" data-action="save-adjustment">Save balance correction</button></div>`}
 function deleteCurrentAccount(accountId=currentAccount){let a=account(accountId);if(!a)return;let linked=data.transactions.filter(t=>t.account===a.id&&t.link),count=data.transactions.filter(t=>t.account===a.id).length;if(linked.length){alert('This account has linked transfers. To protect other account balances, delete or move those transfers first.');return}if(!confirm(`Delete ${a.name} and its ${count} transaction${count===1?'':'s'} permanently? This cannot be undone. Export a backup first if you want to preserve them.`))return;data.transactions=data.transactions.filter(t=>t.account!==a.id);data.accounts=data.accounts.filter(x=>x.id!==a.id);if(prefs.defaultAccount===a.id)prefs.defaultAccount=active()[0]?.id||'';currentAccount=null;accountMenuOpen=false;page='wallet';persist();render();toast('Account deleted')}
-let exitBackDeadline=0,allowHistoryExit=false;
-function render(keep=false){exitBackDeadline=0;let scroll=window.scrollY;el('#app').innerHTML=`<main class="shell">${page==='wallet'?wallet():page==='ledger'?ledger():page==='editor'?editor():page==='search'?search():page==='settings'?settings():page==='account-form'?accountForm():page==='adjust-account'?adjustAccountPage():page==='category-form'?categoryForm():wallet()}</main>${nav()}`;if(keep)window.scrollTo(0,scroll);else window.scrollTo(0,0)}
+let exitBackDeadline=0,allowHistoryExit=false,restoreExitGuard=()=>{};
+function render(keep=false){if(exitBackDeadline)restoreExitGuard();exitBackDeadline=0;let scroll=window.scrollY;el('#app').innerHTML=`<main class="shell">${page==='wallet'?wallet():page==='ledger'?ledger():page==='editor'?editor():page==='search'?search():page==='settings'?settings():page==='account-form'?accountForm():page==='adjust-account'?adjustAccountPage():page==='category-form'?categoryForm():wallet()}</main>${nav()}`;if(keep)window.scrollTo(0,scroll);else window.scrollTo(0,0)}
 function toast(message,callback){clearTimeout(toastTimer);undoAction=callback||null;let box=el('#toast');box.innerHTML=`${esc(message)}${callback?'<button id="undo">Undo</button>':''}`;box.style.display='block';if(callback)el('#undo').onclick=()=>{callback();box.style.display='none';undoAction=null};toastTimer=setTimeout(()=>{box.style.display='none';undoAction=null},10000)}
 function back(){if(page==='editor'){let d=draft();let dirty=editId||d.description||Number(d.digits)||batch.some(r=>r.description||Number(r.digits))||d.notes;if(dirty&&!confirm('Discard unsaved changes?'))return;page=origin;editId=null}else if(page==='ledger'){page='wallet';currentAccount=null}else if(page==='category-form'){page=settingsReturn==='editor'?'editor':'settings'}else if(page==='account-form'){page='settings';accountEditId=null}else page='wallet';render()}
 function syncEditor(){if(page!=='editor')return;let d=draft();for(let name of ['description','account','date','category','notes','from','to']){let input=el(`[name="${name}"]`);if(input)d[name]=input.value}}
@@ -120,30 +120,40 @@ function installBackGuard(){
  const guardState=()=>({...(history.state||{}),pesitoBackGuard:BACK_GUARD});
  // One same-URL guard entry protects the initial app document from an accidental Back.
  if(history.state?.pesitoBackGuard!==BACK_GUARD)history.pushState(guardState(),'');
+
+ restoreExitGuard=()=>{
+  if(!exitBackDeadline)return;
+  exitBackDeadline=0;
+  clearTimeout(toastTimer);
+  el('#toast').style.display='none';
+  if(history.state?.pesitoBackGuard!==BACK_GUARD)history.forward();
+ };
+ // Resuming app interaction cancels the pending exit before any navigation.
+ document.addEventListener('pointerdown',restoreExitGuard,true);
+ document.addEventListener('keydown',restoreExitGuard,true);
  window.addEventListener('popstate',e=>{
-  if(allowHistoryExit)return;
-  // Returning to the existing guard is a restoration, not another Back press.
   if(e.state?.pesitoBackGuard===BACK_GUARD)return;
-  if(page==='wallet'&&Date.now()<exitBackDeadline){
-   allowHistoryExit=true;
-   history.back();
-   return;
-  }
-  // Reuse the original entry. Chrome may skip new entries pushed from a popstate
-  // handler without a fresh user activation, which let a later Android Back exit.
-  history.forward();
-  if(accountMenuOpen){accountMenuOpen=false;exitBackDeadline=0;render(true);return}
+  if(accountMenuOpen){history.forward();accountMenuOpen=false;render(true);return}
   if(page!=='wallet'){
-   exitBackDeadline=0;
+   history.forward();
    if(page==='adjust-account'){page='ledger';render()}else back();
    return;
   }
+  // Stay on the base document while the prompt is visible. The NEXT hardware
+  // Back can now exit naturally, without traversing another synthetic entry.
   exitBackDeadline=Date.now()+2200;
   toast('Press again to exit');
   clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>{el('#toast').style.display='none';exitBackDeadline=0},2200);
+  toastTimer=setTimeout(restoreExitGuard,2200);
  });
- window.addEventListener('pageshow',e=>{if(e.persisted&&allowHistoryExit){allowHistoryExit=false;exitBackDeadline=0;if(history.state?.pesitoBackGuard!==BACK_GUARD)history.pushState(guardState(),'')}});
+ window.addEventListener('pageshow',e=>{
+  if(e.persisted){
+   clearTimeout(toastTimer);
+   exitBackDeadline=0;
+   el('#toast').style.display='none';
+   if(history.state?.pesitoBackGuard!==BACK_GUARD)history.forward();
+  }
+ });
 }
 
 installBackGuard();
