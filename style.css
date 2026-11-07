@@ -736,3 +736,8 @@ html,body,button,a,summary,label,input,select,textarea,[role="button"],[data-act
 /* Full-width approved rectangular header; its lower border is part of the art. */
 .wallet-banner.rectangular-banner{width:calc(100% + 24px)!important;max-width:none!important;margin:-10px -12px 12px!important;padding:0!important;border:0!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;overflow:hidden!important}
 .wallet-banner.rectangular-banner img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;aspect-ratio:2172 / 644!important;object-fit:contain!important;object-position:center!important}
+
+/* Very pale blush canvas to complement the green and pastel artwork. */
+:root{background:#fff4f8}
+html,body{min-height:100%;background:#fff4f8}
+.fixedfooter{background:#fff4f8;box-shadow:0 -8px 20px #fff4f8}
