@@ -2,7 +2,9 @@
 
 Edit a debt account and choose **Installment / Buy Now, Pay Later**. Open it and use **+ Purchase**. Purchases share the company account but keep separate schedules.
 
-For existing purchases, enter the first unpaid date, number of remaining payments, regular payment, and total remaining scheduled repayment from the lender. Adding a plan does not change the existing debt balance. Check “new debt” only for an amount not already in the account.
+Use **New purchase** for debt not yet included in the account. Use **Add existing purchase** to enter original purchase amount, purchase date, optional APR, total scheduled repayment, and paid-to-date. Remaining scheduled debt is total repayment minus paid-to-date. Existing purchases default to already included in the account balance; uncheck that only when the remaining debt needs to be added. The review shows account debt before and after saving.
+
+Generate upcoming installments, then edit individual due dates and amounts before saving. They must sum to the remaining scheduled debt. Enter zero unpaid installments for fully paid purchases. Optional historical installment rows capture original due date, actual payment date, and amount; these are part of paid-to-date, not additional payments. Undocumented paid amounts remain opening history with dates labeled unknown. Imports never create cash withdrawals or historical ledger transactions. Original purchase amounts are records and are not added again to debt.
 
 Monthly schedules preserve the original day and clamp to the last day of shorter months. Weekly and biweekly schedules advance by 7 or 14 days. The final installment is the total minus prior installments and may be smaller. Preview before saving. Individual future dates and amounts can be edited; regeneration preserves paid history.
 

@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
-const context=vm.createContext({console,Intl,Date,Math,Number,String,JSON,Set,Array,crypto:require('crypto').webcrypto,localStorage:{getItem:()=>null,setItem(){}},document:{addEventListener(){},querySelector:()=>null},window:{addEventListener(){}},navigator:{}});
+const context=vm.createContext({performance:{getEntriesByType:()=>[]},console,Intl,Date,Math,Number,String,JSON,Set,Array,crypto:require('crypto').webcrypto,localStorage:{getItem:()=>null,setItem(){}},document:{addEventListener(){},querySelector:()=>null},window:{addEventListener(){}},navigator:{}});
 vm.runInContext(fs.readFileSync(require('path').join(__dirname,'../installments.js'),'utf8'),context);
 vm.runInContext(fs.readFileSync(require('path').join(__dirname,'../app.js'),'utf8').split('\ninstallBackGuard();')[0],context);
 vm.runInContext(`
@@ -38,4 +38,17 @@ check(planRemaining(extraPlan)===34000,'extra reconciliation schedule');
 check(balance(account(currentAccount))===34000,'extra reconciliation only adjusts interest difference');
 check(planUnapplied(extraPlan)===0,'extra payment settled once');
 console.log('Passed: calendar recurrence, final amounts, early allocations, balance separation, reconciliation, deletion, backup.');
+`,context);
+
+vm.runInContext(`
+const imported={schedule:[{id:'old',date:'2026-08-05',cents:23608,importedPaid:23608},{id:'future',date:'2026-12-05',cents:11537}],payments:[]};
+check(planRemaining(imported)===11537,'imported paid amount excluded from remaining');
+check(purchaseImportRemaining(35145,23608)===11537,'lender totals reconcile');
+check(purchaseOpeningDelta(true,true,11537)===0,'included existing balance never added twice');
+check(purchaseOpeningDelta(true,false,11537)===11537,'untracked existing purchase adds only remaining');
+check(purchaseOpeningDelta(false,false,13000)===13000,'new purchase adds scheduled total');
+const restored=JSON.parse(JSON.stringify(imported));check(planRemaining(restored)===11537,'opening history survives backup');
+data.transactions.push({id:'later',account:'affirm',type:'Transfer',direction:'in',date:'2026-11-07',cents:5902});
+imported.payments.push({tx:'later',parts:[{installment:'future',cents:5902}]});
+check(planRemaining(imported)===5635,'subsequent payment reduces imported remaining once');
 `,context);
