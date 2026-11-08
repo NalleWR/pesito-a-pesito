@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),path=require('path');
-const context=vm.createContext({console,Intl,Date,Math,Number,String,JSON,Set,Array,crypto:require('crypto').webcrypto,localStorage:{getItem:()=>null,setItem(){}},document:{addEventListener(){},querySelector:()=>null},window:{addEventListener(){}},navigator:{}});
+const context=vm.createContext({performance:{getEntriesByType:()=>[]},console,Intl,Date,Math,Number,String,JSON,Set,Array,crypto:require('crypto').webcrypto,localStorage:{getItem:()=>null,setItem(){}},document:{addEventListener(){},querySelector:()=>null},window:{addEventListener(){}},navigator:{}});
 vm.runInContext(fs.readFileSync(path.join(__dirname,'../installments.js'),'utf8'),context);
 vm.runInContext(fs.readFileSync(path.join(__dirname,'../app.js'),'utf8').split('\ninstallBackGuard();')[0],context);
 vm.runInContext(`
